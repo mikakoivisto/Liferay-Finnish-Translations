@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project type="java bundle">
+<settings name="project">
+<replacespace enable="false" string="_"/>
+<emptykeys enable="false"/>
+<saveWYSIWYGmode enable="true"/>
+</settings>
+<files workdirectory=".">
+<file filename="Language_en.properties">
+<properties encoding="java utf" visible="true" withescape="true"/>
+</file>
+<file filename="Language_fi.properties">
+<properties encoding="java utf" visible="true" withescape="true"/>
+</file>
+</files>
+<scanner>
+<files enable="false" rootdir="./"/>
+</scanner>
+</project>
