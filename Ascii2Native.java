@@ -3,29 +3,21 @@ import java.io.*;
 
 public class Ascii2Native {
 	
+  /**
+   * 
+   */
   public static void main(String[] argv) throws Exception {
+        if (argv.length < 2) {
+		System.out.println("Usage: java Ascii2Native <basefile> <translation file>");
+		System.exit(1);
+	}
+
 	Properties props = new Properties();
-	FileInputStream fin = new java.io.FileInputStream(new File(argv[0]));
+	FileInputStream fin = new java.io.FileInputStream(new File(argv[1]));
 	props.load(fin);
 	BufferedReader br = new BufferedReader(new FileReader(new File(argv[0])));
-	FileOutputStream fos = new FileOutputStream(new File(argv[0] + ".native"));
+	FileOutputStream fos = new FileOutputStream(new File(argv[1] + ".native"));
 	OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
-	
-	//Enumeration enu = props.keys();
-	//List<String> keys = new ArrayList<String>();
-//	while (enu.hasMoreElements()) {
-//		String key = (String)enu.nextElement();
-//		keys.add(key);
-//	}
-//	Collections.sort(keys);
-//	Iterator<String> iter = keys.iterator();
-//	osw.write("#\r\n" 
-//			+ "# Translations by Mika Koivisto (mika@javaguru.fi)\r\n" 
-//			+ "#\r\n");
-//	while (iter.hasNext()) {
-//		String key = iter.next();
-//		osw.write(key + "=" + props.getProperty(key) + "\r\n");
-//	}
 
 	String line = null;
 
@@ -43,7 +35,7 @@ public class Ascii2Native {
 
 			String translatedText = props.getProperty(key);
 
-			osw.write(key + "=" + translatedText + "\r\n");
+			osw.write(key + "=" + translatedText.trim() + "\r\n");
 			osw.flush();
 
 		}
