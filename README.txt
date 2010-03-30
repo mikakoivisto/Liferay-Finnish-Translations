@@ -1,4 +1,4 @@
-Translations for Liferay
+Translations for Liferay .
 --------------------------------
 
 Easiest way to start translating is to download Popeye from
